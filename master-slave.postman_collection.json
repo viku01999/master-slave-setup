@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "f59ff447-2064-4d51-8856-7e942f35caa5",
+		"name": "master-slave",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38056767",
+		"_collection_link": "https://planetary-moon-74304.postman.co/workspace/spade-with-microservices~7e4d6aca-3e22-4b03-a072-ac682e06ebad/collection/38056767-f59ff447-2064-4d51-8856-7e942f35caa5?action=share&source=collection_link&creator=38056767"
+	},
+	"item": [
+		{
+			"name": "readAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7887/api/master-slave/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7887",
+					"path": [
+						"api",
+						"master-slave",
+						""
+					]
+				},
+				"description": "### Example: GET `/api/master-slave`\n\n1. Client sends request\n    \n2. Controller receives request\n    \n3. Controller calls Service method\n    \n4. `@Transactional(readOnly = true)`\n    \n5. AOP runs BEFORE method\n    \n6. Sets datasource to SLAVE\n    \n7. Repository executes query\n    \n8. RoutingDataSource chooses SLAVE\n    \n9. Query runs on Slave DB\n    \n10. After method → AOP clears context"
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7887/api/master-slave/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7887",
+					"path": [
+						"api",
+						"master-slave",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Write",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"deepak\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7887/api/master-slave",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7887",
+					"path": [
+						"api",
+						"master-slave"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updated",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"kumar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7887/api/master-slave/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7887",
+					"path": [
+						"api",
+						"master-slave",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
